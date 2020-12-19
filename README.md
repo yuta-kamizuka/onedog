@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|password|string|null: false|
+|email|string|null: false|
+|first_name|string|null: false|
+|family_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## dogs table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|introduction|text|null: false|
+|dog_breed|string|null: false|
+|age|integer|null: false|
+|sex|string|null: false|
+|condition|string|null: false|
+### Association
+- has_many :image
+- belongs_to_active_hash :dog_breed
+- belongs_to_active_hash :age
+- belongs_to_active_hash :sex
+- belongs_to_active_hash :condition
