@@ -1,0 +1,68 @@
+.container
+  .container__block
+
+    .container__header
+      ヘッダー
+
+    -# 画像タイトル
+    .container__content
+      .container__content__photo
+        %h3.phototitle__text
+          Dog photo
+        %p.phototitle__comment
+          最大5枚までアップロード
+      -# 画像入る場所
+      .photobox
+        .outputbox
+
+    -# 説明
+    .container__content
+      .container__content__title
+        %h3.dog__text
+          紹介
+        %input.introduction__form{:name => "", :placeholder => "紹介文", :type => "", :value => ""}/
+
+    -# 名前
+    .container__content
+      .container__content__title
+        %h3.dog__text
+          名前
+        %input.dog__form{:name => "", :placeholder => "名前", :type => "", :value => ""}/
+    -# 犬種
+    .container__content
+      .container__content__title
+        %h3.dog__text
+          種類
+        %input.dog__form{:name => "", :placeholder => "種類", :type => "", :value => ""}/
+
+    -# 年齢
+    .container__content
+      .container__content__title
+        %h3.dog__text
+          年齢
+        %input.dog__form{:name => "", :placeholder => "年齢", :type => "", :value => ""}/
+
+    -# 性別
+    .container__content
+      .container__content__title
+        %h3.dog__text
+          性別
+        %input.dog__form{:name => "", :placeholder => "性別", :type => "", :value => ""}/
+
+    -# 健康状態
+    .container__content
+      .container__content__title
+        %h3.dog__text
+          健康状態
+        %input.dog__form{:name => "", :placeholder => "健康状態", :type => "", :value => ""}/
+
+
+    -# 登録ボタン
+    .container__content
+      .container__content__btn
+        %input.dog__btn{type: "submit" ,value: "登録"}
+
+
+
+
+

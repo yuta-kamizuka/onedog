@@ -1,0 +1,58 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  &__block {
+    background-color: whitesmoke;
+  }
+
+    &__header {
+      background-color: yellow;
+      height: 200px;
+    }
+
+    &__content {
+      margin: auto;
+      max-width: 800px;
+      padding: 30px;
+    }
+
+      .container__content__title {
+        &__text{
+          font-size: 20px;
+          margin-left: 10px;
+          margin-bottom: 10px;
+        }
+        &__comment {
+        }
+      }
+      .photobox {
+        width: 800px;
+        height: 200px;
+        border: 1px dashed;
+        background-color: white;
+      }
+      .introduction__form {
+        width: 800px;
+        height: 150px;
+      }
+      .dog__text {
+        margin-bottom: 5px;
+      }
+      .dog__form {
+        width: 800px;
+        height: 40px;
+        font-size: 20px;
+      }
+      .container__content__btn {
+        display: flex;
+        justify-content: center;
+      }
+        .dog__btn {
+          background-color: lightcoral;
+          width: 250px;
+          height: 80px;
+          font-size: 30px;
+        }
+
+    }
