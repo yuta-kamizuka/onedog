@@ -3,5 +3,6 @@ class DogsController < ApplicationController
   end
 
   def new
+    @dog = Dog.new
   end
 end
