@@ -14,11 +14,12 @@
             最大5枚までアップロード
         -# 画像入る場所
         .photobox
-          .outputbox
+          %div#image__input
             = f.fields_for :images do |i|
-              = i.file_field :src
-
-
+              = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}
+              %button.js-remove
+                削除
+            .outputbox
 
 
       -# 説明
