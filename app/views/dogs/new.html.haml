@@ -15,6 +15,11 @@
         -# 画像入る場所
         .photobox
           .outputbox
+            = f.fields_for :images do |i|
+              = i.file_field :src
+
+
+
 
       -# 説明
       .container__content

@@ -1,9 +1,11 @@
 class DogsController < ApplicationController
   def index
+    @dogs = Dog.includes(:image).order('created_at DESC')
   end
 
   def new
     @dog = Dog.new
+    @dog.images.new
   end
 
   def create
@@ -12,6 +14,7 @@ class DogsController < ApplicationController
       @dog.save
       redirect_to root_path
     else
+      render :new
     end
   end
 
@@ -23,7 +26,8 @@ class DogsController < ApplicationController
       :dog_breed,
       :age,
       :sex,
-      :condition
+      :condition,
+      images_attributes: [:src]
     )
   end
 end
