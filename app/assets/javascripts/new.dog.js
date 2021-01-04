@@ -9,17 +9,51 @@ $(function(){
                      id="dog_images_attributes_${index}_src"></div>`;
        return html;
      }
+
+     //  プレビュー用imgタグ生成の関数
+     const buildImg = (index, url)=> {
+       const html = `<img date-index="${index}>" src="${url}" width="100px" height="100px">
+                     <div class="js-remove" id="js-remove${index}">削除する</div>`;
+    //  const buildImg = (index, url)=> {
+    //    const html = `<img data-index="${index}>" src="${url}" width="100px" height="100px">
+    //                  <div class="js-remove" id="js-remove${index}">削除する</div>`;
+
+       return html;
+     }
+
     //  file_fieldのnameに動的なindexをつける為の配列
     let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
+     // 既に使われているindexを除外。これにより、数字のつじつまが合うようになる。
+     lastIndex = $('.js-file:last').data('index');
+     fileIndex.splice(0, lastIndex);
+     $('.hidden-destroy').hide();
+
     $('#image__input').on('change', '.js-file', function(e) {
-      // fileIndexの先頭の数字を使ってinputを作る。 ファイル選択時に、14行目に用意した配列の先頭の数字をbuildFileField関数に渡します。
-      $('#image__input').append(buildFileField(fileIndex[0]));
-      // shift() メソッドは、配列から最初の要素を取り除き、その要素を返します。このメソッドは配列の長さを変えます。
-      fileIndex.shift();
-      // 末尾に1を足した数字を追加する
-      // push とは配列の末尾(後ろ)に新しい要素を追加するためのメソッドです。
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+
+      // ファイルが選択されたときfileIndexの最初の数字をindexとして持ったフォームを新しく作成する。
+      const targetIndex = $(this).parent().data('index');
+
+      // ファイルのブラウザ上でのURLを習得する
+      const file = e.target.files[0];
+      const blobUrl = window.URL.createObjectURL(file);
+
+      // 該当indexを持つimgタグがあれば習得して変数imgへ入れる（画像変更処理）
+
+      if (img = $(`img[date-index="${targetIndex}"]`)[0]) {
+        img.setAttribute('src', blobUrl);
+      } else {  //新規画像追加処理
+        $('#preview').append(buildImg(targetIndex, blobUrl));
+        // $('#image__input').append(buildImg(targetIndex, blobUrl));
+
+        // fileIndexの先頭の数字を使ってinputを作る。 ファイル選択時に、14行目に用意した配列の先頭の数字をbuildFileField関数に渡します。
+        $('#image__input').append(buildFileField(fileIndex[0]));
+        // shift() メソッドは、配列から最初の要素を取り除き、その要素を返します。このメソッドは配列の長さを変えます。
+        fileIndex.shift();
+        // 末尾に1を足した数字を追加する
+        // push とは配列の末尾(後ろ)に新しい要素を追加するためのメソッドです。
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      }
     });
 
     $('#image__input').on('click', 'js-remove', function() {

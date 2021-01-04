@@ -17,9 +17,9 @@
           %div#image__input
             = f.fields_for :images do |i|
               = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}
-              %button.js-remove
-                削除
-            .outputbox
+            %button.js-remove
+              削除
+              .outputbox#preview
 
 
       -# 説明
