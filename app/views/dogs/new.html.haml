@@ -12,15 +12,16 @@
             Dog photo
           %p.phototitle__comment
             最大5枚までアップロード
-        -# 画像入る場所
-        .photobox
-          %div#image__input
-            = f.fields_for :images do |i|
-              = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}
-            %button.js-remove
-              削除
-              .outputbox#preview
+            #image-Input__label
+              %i.fa.fa-camera
+                カメラをクリックしてアップロード
 
+        -# 画像入る場所
+        .photobox#preview
+          .image__box#image__input
+            = f.fields_for :images do |i|
+              = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}, style: 'display: none;'
+            .outputbox
 
       -# 説明
       .container__content
