@@ -23,10 +23,10 @@ class DogsController < ApplicationController
     params.require(:dog).permit(
       :name,
       :introduction,
-      :dog_breed,
-      :age,
-      :sex,
-      :condition,
+      :dog_breed_id,
+      :age_id,
+      :sex_id,
+      :condition_id,
       images_attributes: [:src]
     )
   end

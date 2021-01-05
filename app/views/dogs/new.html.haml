@@ -42,28 +42,28 @@
         .container__content__title
           %h3.dog__text
             種類
-          = f.text_field :dog_breed, class: "dog__form"
+          = f.collection_select :dog_breed_id, DogBreed.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
 
       -# 年齢
       .container__content
         .container__content__title
           %h3.dog__text
             年齢
-          = f.text_field :age, class: "dog__form"
+          = f.collection_select :age_id, Age.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
 
       -# 性別
       .container__content
         .container__content__title
           %h3.dog__text
             性別
-          = f.text_field :sex, class: "dog__form"
+          = f.collection_select :sex_id, Sex.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
 
       -# 健康状態
       .container__content
         .container__content__title
           %h3.dog__text
             健康状態
-          = f.text_field :condition, class: "dog__form"
+          = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
 
 
       -# 登録ボタン
