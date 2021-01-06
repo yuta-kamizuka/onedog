@@ -15,10 +15,11 @@ ActiveRecord::Schema.define(version: 2020_12_24_131850) do
   create_table "dogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "introduction", null: false
-    t.string "dog_breed_id", null: false
-    t.string "age_id", null: false
-    t.string "sex_id", null: false
-    t.string "condition_id", null: false
+    t.integer "dog_breed_id", null: false
+    t.integer "age_id", null: false
+    t.integer "sex_id", null: false
+    t.integer "condition_id", null: false
+    t.integer "status", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

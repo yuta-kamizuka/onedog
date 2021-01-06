@@ -3,11 +3,11 @@ class CreateDogs < ActiveRecord::Migration[6.0]
     create_table :dogs do |t|
       t.string :name,              null: false
       t.text :introduction,        null: false
-      t.string :dog_breed_id,      null: false
-      t.string :age_id,            null: false
-      t.string :sex_id,            null: false
-      t.string :condition_id,      null: false
-
+      t.integer :dog_breed_id,      null: false
+      t.integer :age_id,            null: false
+      t.integer :sex_id,            null: false
+      t.integer :condition_id,      null: false
+      t.integer :status,           null: false, default: 1
       t.timestamps
     end
   end

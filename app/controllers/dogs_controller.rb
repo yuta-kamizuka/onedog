@@ -10,10 +10,12 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-    if
+    if 
+      @dog.valid?
       @dog.save
       redirect_to root_path
     else
+      @dog.images.new
       render :new
     end
   end
