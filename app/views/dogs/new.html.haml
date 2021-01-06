@@ -5,64 +5,71 @@
       ヘッダー
 
     -# 画像タイトル
-    .container__content
-      .container__content__photo
-        %h3.phototitle__text
-          Dog photo
-        %p.phototitle__comment
-          最大5枚までアップロード
-      -# 画像入る場所
-      .photobox
-        .outputbox
+    = form_with model: @dog, local: true do |f|
+      .container__content
+        .container__content__photo
+          %h3.phototitle__text
+            Dog photo
+          %p.phototitle__comment
+            最大5枚までアップロード
+            #image-Input__label
+              %i.fa.fa-camera
+                カメラをクリックしてアップロード
 
-    -# 説明
-    .container__content
-      .container__content__title
-        %h3.dog__text
-          紹介
-        %input.introduction__form{:name => "", :placeholder => "紹介文", :type => "", :value => ""}/
+        -# 画像入る場所
+        .photobox#preview
+          .image__box#image__input
+            = f.fields_for :images do |i|
+              = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}, style: 'display: none;'
+            .outputbox
 
-    -# 名前
-    .container__content
-      .container__content__title
-        %h3.dog__text
-          名前
-        %input.dog__form{:name => "", :placeholder => "名前", :type => "", :value => ""}/
-    -# 犬種
-    .container__content
-      .container__content__title
-        %h3.dog__text
-          種類
-        %input.dog__form{:name => "", :placeholder => "種類", :type => "", :value => ""}/
+      -# 説明
+      .container__content
+        .container__content__title
+          %h3.dog__text
+            紹介
+          = f.text_area :introduction, class: "introduction__form"
 
-    -# 年齢
-    .container__content
-      .container__content__title
-        %h3.dog__text
-          年齢
-        %input.dog__form{:name => "", :placeholder => "年齢", :type => "", :value => ""}/
+      -# 名前
+      .container__content
+        .container__content__title
+          %h3.dog__text
+            名前
+          = f.text_field :name, class: "dog__form"
 
-    -# 性別
-    .container__content
-      .container__content__title
-        %h3.dog__text
-          性別
-        %input.dog__form{:name => "", :placeholder => "性別", :type => "", :value => ""}/
+      -# 犬種
+      .container__content
+        .container__content__title
+          %h3.dog__text
+            種類
+          = f.collection_select :dog_breed_id, DogBreed.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+          = @dog.errors.full_messages_for(:dog_breed_id)[0]
 
-    -# 健康状態
-    .container__content
-      .container__content__title
-        %h3.dog__text
-          健康状態
-        %input.dog__form{:name => "", :placeholder => "健康状態", :type => "", :value => ""}/
+      -# 年齢
+      .container__content
+        .container__content__title
+          %h3.dog__text
+            年齢
+          = f.collection_select :age_id, Age.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+          = @dog.errors.full_messages_for(:age_id)[0]
 
+      -# 性別
+      .container__content
+        .container__content__title
+          %h3.dog__text
+            性別
+          = f.collection_select :sex_id, Sex.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+          = @dog.errors.full_messages_for(:sex_id)[0]
 
-    -# 登録ボタン
-    .container__content
-      .container__content__btn
-        %input.dog__btn{type: "submit" ,value: "登録"}
+      -# 健康状態
+      .container__content
+        .container__content__title
+          %h3.dog__text
+            健康状態
+          = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+          = @dog.errors.full_messages_for(:condition_id)[0]
 
-
-
-
-
+      -# 登録ボタン
+      .container__content
+        .container__content__btn
+          = f.submit "登録", class: "dog__btn"

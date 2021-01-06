@@ -17,7 +17,7 @@
       padding: 30px;
     }
 
-      .container__content__title {
+      .container__content__photo {
         &__text{
           font-size: 20px;
           margin-left: 10px;
@@ -27,10 +27,33 @@
         }
       }
       .photobox {
+        // flex-direction: row;
+        // display: flex;
+        position: relative;
+        // display: block;
+        // justify-content: center;
+        // align-items: flex-end;
         width: 800px;
         height: 200px;
         border: 1px dashed;
         background-color: white;
+        overflow: hidden;
+      }
+      .image__box {
+        // display: flex;
+        position: absolute;
+        width: 800px;
+        height: 200px;
+      }
+      outputbox {
+        background-color: lime;
+      }
+      .js-remove {
+        width: 165px;
+        margin-top: auto;
+        margin-left: 1px;
+
+
       }
       .introduction__form {
         width: 800px;
@@ -54,5 +77,4 @@
           height: 80px;
           font-size: 30px;
         }
-
     }
