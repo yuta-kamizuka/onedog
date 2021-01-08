@@ -4,10 +4,10 @@ class Dog < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  belongs_to :dog_breed
-  belongs_to :age
-  belongs_to :sex
-  belongs_to :condition
+  belongs_to_active_hash :dog_breed
+  belongs_to_active_hash :age
+  belongs_to_active_hash :sex
+  belongs_to_active_hash :condition
 
   validates :dog_breed_id, :age_id, :sex_id, :condition_id, presence: true
 

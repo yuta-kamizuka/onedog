@@ -4,41 +4,46 @@
       .basics__frame__box__title
         %h3 詳細ページ
 
-    .image__box
-      .image__box__main
-
-      .image__box__sub
-        .image__box__sub__frame
-          .image__box__sub__frame__box
+    .image__Box
+      .image__Box__main
+        = image_tag @images.first.src.url, {class: 'q'}
+      .image__Box__sub
+        - @images.each do |image|
+          = image_tag image.src.url, {class: 'w'}
 
     .introduction__box
       .introduction__box__name
-        %h3 紹介
+        %h3 紹介文
       .introduction__box__comment
-
+        = @dog.introduction
 
     .table
       %table
         %tbody
           %tr
             %th 名前
-            %td a
+            %td
+              = @dog.name
 
           %tr
             %th 種類
-            %td a
+            %td
+              = @dog.dog_breed.name
 
           %tr
             %th 年齢
-            %td a
+            %td
+              = @dog.age.name
 
           %tr
             %th 性別
-            %td a
+            %td
+              = @dog.sex.name
 
           %tr
             %th 健康状態
-            %td a
+            %td
+              = @dog.condition.name
 
     .comment__box
       %text_area
