@@ -20,6 +20,11 @@ class DogsController < ApplicationController
     end
   end
 
+  def show
+    @dog = Dog.find(params[:id])
+    @images = @dog.images
+  end
+
   private
   def dog_params
     params.require(:dog).permit(
@@ -32,4 +37,10 @@ class DogsController < ApplicationController
       images_attributes: [:src]
     )
   end
+
+  # def set_dog
+  #   @dog = Dog.find(params[:id])
+  # end
+  #     使うならbefore_actionを定義する
 end
+

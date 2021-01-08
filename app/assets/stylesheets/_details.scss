@@ -3,7 +3,7 @@
   margin: opx auto;
   width: 100%;
   &__frame {
-    background-color: #dddddd;
+    background-color: whitesmoke;
     margin: auto;
     max-width: 800px;
     padding-top: 50px;
@@ -20,8 +20,8 @@
   }
 }
 
-.image__box {
-  background-color: #dddddd;
+.image__Box {
+  background-color: whitesmoke;
   width: 800px;
   height: 600px;
   margin: auto;
@@ -32,40 +32,28 @@
     margin: auto;
   }
   &__sub{
-    background-color: mediumblue;
     width: 600px;
-    height: 200px;
+    height: 150px;
     margin: auto;
-    &__frame {
-      display: flex;
-      &__box {
-        background-color: red;
-        width: 200px;
-        height: 200px;
-      }
-    }
   }
 }
 
 .introduction__box {
-  background-color: #dddddd;
   width: 600px;
   height: 300px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   &__name {
-    background-color: #dddddd;
     font-size: 20px;
     margin-top: 10px;
-    margin-left: 50px;
     margin-bottom: 10px;
   }
   &__comment {
     background-color: white;
     width: 600px;
     height: 200px;
-
+    border: solid 1px black;
   }
 }
 
@@ -83,7 +71,7 @@
   }
 }
 
-tboby {
+tbody {
   display: table-row-group;
   vertical-align: middle;
   border-color: inherit;
@@ -112,4 +100,14 @@ td {
 }
 table, td, th{
   border: 1px solid black;
+}
+
+.q {
+  width: 600px;
+  height: 400px;
+}
+
+.w {
+  width: 146px;
+  height: 150px;
 }
