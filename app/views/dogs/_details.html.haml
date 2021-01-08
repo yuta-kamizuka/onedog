@@ -1,21 +1,29 @@
 .basics
   .basics__frame
+    .basics__frame__box
+      .basics__frame__box__title
+        %h3 詳細ページ
 
-    .iamge__box
+    .image__box
       .image__box__main
 
-      .image__box__subframe
-        .image__box__subfeame__box
+      .image__box__sub
+        .image__box__sub__frame
+          .image__box__sub__frame__box
 
-    .name__box
-      -# = @dog.name
-    
     .introduction__box
+      .introduction__box__name
+        %h3 紹介
+      .introduction__box__comment
+
 
     .table
       %table
-        %caption 詳細
         %tbody
+          %tr
+            %th 名前
+            %td a
+
           %tr
             %th 種類
             %td a
