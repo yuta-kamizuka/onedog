@@ -16,18 +16,22 @@
       .main__header__right__box
         %ul.main__header__right__box__list
           %li.main__header__right__box__list__link
-            %a.main__header__right__box__list__link__(href='#')
-              ログイン
+            = link_to "マイページ"
+            = link_to "ログアウト"
+          %li.main__header__right__box__list__link
+            = link_to "ログイン", new_user_session_path
+          %li.main__header__right__box__list__link
+            = link_to "新規登録", new_user_registration_path
+
 
         %ul.main__header__right__box__list
           %li.main__header__right__box__list__link
             %a.main__header__right__box__list__link__(href='#')
-              新規登録
+              
 
         %ul.main__header__right__box__list
           %li.main__header__right__box__list__link
             %a.main__header__right__box__list__link__(href='#')
-              検索
 
   .top
     .top__image

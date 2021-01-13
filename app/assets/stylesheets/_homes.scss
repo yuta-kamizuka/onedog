@@ -61,6 +61,10 @@
       &__list {
         margin: 20px;
         font-size: 25px;
+        display: flex;
+        &__link {
+          margin: 0px 10px 0px 10px;
+        }
       }
     }
   }
