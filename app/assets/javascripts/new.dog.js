@@ -14,7 +14,7 @@ document.addEventListener('turbolinks:load', function() {
 
       //  プレビュー用imgタグ生成の関数
       const buildImg = (index, url)=> {
-        const html = `<img date-index="${index}>" src="${url}" width="165px" height="200px">`;
+        const html = `<img date-index="${index}>" src="${url}" width="200px" height="200px">`;
                       // <div class="js-remove" id="js-remove${index}">削除</div>`;
         return html;
       }

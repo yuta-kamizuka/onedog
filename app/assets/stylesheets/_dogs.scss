@@ -7,16 +7,20 @@
   }
 
     &__header {
-      background-color: yellow;
-      height: 200px;
     }
 
-    &__content {
+    &__Content {
       margin: auto;
-      max-width: 80vw;
-      padding: 30px;
+      max-width: 800px;
+      &__title {
+        margin: auto;
+      }
     }
-
+    .a {
+      max-width: 800px;
+      margin: auto;
+      padding: 10px;
+    }
       .container__content__photo {
         &__text{
           font-size: 20px;
@@ -34,16 +38,15 @@
         // justify-content: center;
         // align-items: flex-end;
         margin: auto;
-        width: 80vw;
+        max-width: 800px;
         height: 200px;
         border: 1px dashed;
         background-color: white;
-        overflow: hidden;
+        overflow: auto;
       }
       .image__box {
         // display: flex;
         position: absolute;
-        width: 80vw;
         height: 200px;
       }
       .outputbox {
@@ -58,6 +61,7 @@
       }
       .introduction__form {
         width: 80vw;
+        max-width: 800px;
         height: 150px;
       }
 

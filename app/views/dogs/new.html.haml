@@ -2,33 +2,34 @@
   .container__block
 
     .container__header
-      ヘッダー
 
     -# 画像タイトル
     = form_with model: @dog, local: true do |f|
       .container__content
-        .container__content__photo
-          %h3.phototitle__text
-            Dog photo
-          %p.phototitle__comment
-            最大4枚までアップロード
-            #image-Input__label
-              %i.fa.fa-camera
-                カメラをクリックしてアップロード
+        .a
+          .container__content__photo
+            %h3.phototitle__text
+              Dog photo
+            %p.phototitle__comment
+              最大4枚までアップロード
+              #image-Input__label
+                %i.fa.fa-camera
+                  カメラをクリックしてアップロード
 
-        -# 画像入る場所
-        .photobox#preview
-          .image__box#image__input
-            = f.fields_for :images do |i|
-              = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}, style: 'display: none;'
-            -# .outputbox
+          -# 画像入る場所
+          .photobox#preview
+            .image__box#image__input
+              = f.fields_for :images do |i|
+                = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}, style: 'display: none;'
+              -# .outputbox
 
       -# 説明
-      .container__content
-        .container__content__title
-          %h3.dog__text
-            紹介
-          = f.text_area :introduction, class: "introduction__form"
+      .a
+        .container__Content
+          .container__content__title
+            %h3.dog__text
+              紹介
+            = f.text_area :introduction, class: "introduction__form"
 
       -# 名前
       .container__contents
