@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'homes#index'
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   resources :dogs, only: [:index, :new, :create, :show]
+
 end

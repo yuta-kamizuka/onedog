@@ -1,0 +1,49 @@
+%h2.headText  新規会員登録
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .parentField
+    .childField
+      .nickname
+        = f.label :ユーザー名
+        %p.labelRequire 必須
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例) 太郎"
+      .email
+        = f.label :メールアドレス
+        %p.labelRequire 必須
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例) taro@furima.com"
+      .password
+        = f.label :パスワード
+        %p.labelRequire 必須
+        = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字"
+        
+      .password
+        = f.label :パスワード（確認用）
+        %p.labelRequire 必須
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+        %br/
+      .name
+        .family_name
+          = f.label :姓
+          %p.labelRequire 必須
+          = f.text_field :family_name, class: "family_name__textBox", autofocus: true, autocomplete: "family_name", placeholder: "例)山田"
+
+        .first_name
+          = f.label :名
+          %p.labelRequire 必須
+          = f.text_field :first_name, class: "first_name__textBox", autofocus: true, autocomplete: "first_name", placeholder: "例)太郎"
+      .nameKana
+        .family_name_kana
+          = f.label :姓（カナ）
+          %p.labelRequire 必須
+          = f.text_field :family_name_kana, class: "family_name_kana__textBox", autofocus: true, autocomplete: "family_name_kana", placeholder: "例)タロウ"
+        .first_name_kana
+          = f.label :名（カナ）
+          %p.labelRequire 必須
+          = f.text_field :first_name_kana, class: "first_name_kana__textBox", autofocus: true, autocomplete: "first_name_kana", placeholder: "例)ヤマダ"
+      .phone_number
+        = f.label :電話番号
+        %p.labelRequire 必須
+        = f.text_field :phone, autofocus: true, autocomplete: "phone_number", placeholder: "例)05012345678"
+  .actions
+    = f.submit "Sign up", class: "submit"
+    = render "devise/shared/links"

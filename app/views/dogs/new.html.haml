@@ -11,7 +11,7 @@
           %h3.phototitle__text
             Dog photo
           %p.phototitle__comment
-            最大5枚までアップロード
+            最大4枚までアップロード
             #image-Input__label
               %i.fa.fa-camera
                 カメラをクリックしてアップロード
@@ -21,7 +21,7 @@
           .image__box#image__input
             = f.fields_for :images do |i|
               = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}, style: 'display: none;'
-            .outputbox
+            -# .outputbox
 
       -# 説明
       .container__content
@@ -31,39 +31,39 @@
           = f.text_area :introduction, class: "introduction__form"
 
       -# 名前
-      .container__content
-        .container__content__title
+      .container__contents
+        .container__contents__title
           %h3.dog__text
             名前
           = f.text_field :name, class: "dog__form"
 
       -# 犬種
-      .container__content
-        .container__content__title
+      .container__contents
+        .container__contents__title
           %h3.dog__text
             種類
           = f.collection_select :dog_breed_id, DogBreed.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
           = @dog.errors.full_messages_for(:dog_breed_id)[0]
 
       -# 年齢
-      .container__content
-        .container__content__title
+      .container__contents
+        .container__contents__title
           %h3.dog__text
             年齢
           = f.collection_select :age_id, Age.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
           = @dog.errors.full_messages_for(:age_id)[0]
 
       -# 性別
-      .container__content
-        .container__content__title
+      .container__contents
+        .container__contents__title
           %h3.dog__text
             性別
           = f.collection_select :sex_id, Sex.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
           = @dog.errors.full_messages_for(:sex_id)[0]
 
       -# 健康状態
-      .container__content
-        .container__content__title
+      .container__contents
+        .container__contents__title
           %h3.dog__text
             健康状態
           = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}

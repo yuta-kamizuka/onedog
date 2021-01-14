@@ -1,29 +1,30 @@
-$(function(){
-     //画像用inputを生成する関数
-     const buildFileField = (index)=> {
-       const html = `<div date-index="${index}" class="js-file_group">
-                     <input accept="image/*" class="js-file"
-                     date-index="${index}"
-                     style="display: none;",
-                     type="file"
-                     name="dog[images_attributes][${index}][src]"
-                     id="dog_images_attributes_${index}_src"></div>`;
-       return html;
-     }
+document.addEventListener('turbolinks:load', function() {
+  $(function(){
+      //画像用inputを生成する関数
+      const buildFileField = (index)=> {
+        const html = `<div date-index="${index}" class="js-file_group">
+                      <input accept="image/*" class="js-file"
+                      date-index="${index}"
+                      style="display: none;",
+                      type="file"
+                      name="dog[images_attributes][${index}][src]"
+                      id="dog_images_attributes_${index}_src"></div>`;
+        return html;
+      }
 
-     //  プレビュー用imgタグ生成の関数
-     const buildImg = (index, url)=> {
-       const html = `<img date-index="${index}>" src="${url}" width="200px" height="200px">`;
+      //  プレビュー用imgタグ生成の関数
+      const buildImg = (index, url)=> {
+        const html = `<img date-index="${index}>" src="${url}" width="165px" height="200px">`;
                       // <div class="js-remove" id="js-remove${index}">削除</div>`;
-       return html;
-     }
+        return html;
+      }
 
     //  file_fieldのnameに動的なindexをつける為の配列
     let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
-     // 既に使われているindexを除外。これにより、数字のつじつまが合うようになる。
-     lastIndex = $('.js-file:last').data('index');
-     fileIndex.splice(0, lastIndex);
+      // 既に使われているindexを除外。これにより、数字のつじつまが合うようになる。
+      lastIndex = $('.js-file:last').data('index');
+      fileIndex.splice(0, lastIndex);
     //  $('.hidden-destroy').hide();
 
       //カメラボタンがクリックされた時に発火するメソッド
@@ -33,8 +34,6 @@ $(function(){
         // 取得したインプットタグをクリックするメソッド
         file_field.trigger("click");
       })
-  
-  
 
     $('#image__input').on('change', '.js-file', function(e) {
 
@@ -69,4 +68,5 @@ $(function(){
       // 画像入力欄が0にならないようにする。
       if ($('.js-file').length == 0) $('#image__input').append(buildFileField(fileIndex[0]));
     });
+  });
 });

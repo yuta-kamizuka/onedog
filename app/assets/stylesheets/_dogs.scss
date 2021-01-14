@@ -13,7 +13,7 @@
 
     &__content {
       margin: auto;
-      max-width: 800px;
+      max-width: 80vw;
       padding: 30px;
     }
 
@@ -28,12 +28,13 @@
       }
       .photobox {
         // flex-direction: row;
-        // display: flex;
+        display: flex;
         position: relative;
         // display: block;
         // justify-content: center;
         // align-items: flex-end;
-        width: 800px;
+        margin: auto;
+        width: 80vw;
         height: 200px;
         border: 1px dashed;
         background-color: white;
@@ -42,10 +43,10 @@
       .image__box {
         // display: flex;
         position: absolute;
-        width: 800px;
+        width: 80vw;
         height: 200px;
       }
-      outputbox {
+      .outputbox {
         background-color: lime;
       }
       .js-remove {
@@ -56,14 +57,26 @@
 
       }
       .introduction__form {
-        width: 800px;
+        width: 80vw;
         height: 150px;
       }
+
+    &__contents {
+      max-width: 40vw;
+      padding: 30px;
+      margin: auto;
+      &__title {
+        max-width: 80vw;
+      
+      }
+    }
+      
       .dog__text {
         margin-bottom: 5px;
       }
       .dog__form {
-        width: 800px;
+        margin: auto;
+        width: 40vw;
         height: 40px;
         font-size: 20px;
       }

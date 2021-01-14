@@ -5,23 +5,27 @@
         %h2.main__header__left__box__title
           One Dog 
         %h3.main__header__left__box__text
-          = link_to "里親募集Link", new_dog_path, class: "main__header__left__box__text__btn"
 
     .main__header__center
       .main__header__center__box
         .main__header__center__box__text
-          -# %P 里親募集
+
 
     .main__header__right
       .main__header__right__box
         %ul.main__header__right__box__list
-          %li.main__header__right__box__list__link
-            = link_to "マイページ"
-            = link_to "ログアウト"
-          %li.main__header__right__box__list__link
-            = link_to "ログイン", new_user_session_path
-          %li.main__header__right__box__list__link
-            = link_to "新規登録", new_user_registration_path
+          - if user_signed_in?
+            %li.main__header__right__box__list__link
+              -# = link_to "マイページ",
+              = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "main__header__left__box__text__btn" 
+            %li.main__header__right__box__list__link
+              = link_to "里親募集Link", new_dog_path, class: "main__header__left__box__text__btn"
+
+          - else
+            %li.main__header__right__box__list__link
+              = link_to "ログイン", new_user_session_path, class: "main__header__left__box__text__btn"
+            %li.main__header__right__box__list__link
+              = link_to "新規登録", new_user_registration_path, class: "main__header__left__box__text__btn"
 
 
         %ul.main__header__right__box__list
