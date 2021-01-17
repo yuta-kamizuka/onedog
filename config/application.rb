@@ -16,6 +16,7 @@ module Onedog
       g.helper false
       g.test_framework false
       config.i18n.default_locale = :ja
+      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'models', 'ja.yml').to_s]
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
