@@ -2,6 +2,9 @@ ja:
   activerecord:
     attributes:
       dog:
+        images: 画像
+        name: 名前
+        introduction: 紹介
         dog_breed_id: 種類
         age_id: 年齢
         sex_id: 性別

@@ -9,7 +9,16 @@ class Dog < ApplicationRecord
   belongs_to_active_hash :sex
   belongs_to_active_hash :condition
 
-  validates :dog_breed_id, :age_id, :sex_id, :condition_id, presence: true
+  validates  :images, presence: true
+  validates  :name, presence: true, uniqueness: { case_sensitive: true }, length: {maximum: 10}
+  validates  :introduction, presence: true, uniqueness: { case_sensitive: true }, length: {minimum: 10}
+
+  validates  :dog_breed_id,
+             :age_id,
+             :sex_id,
+             :condition_id,
+             presence: true
+  
 
   enum status: {
     "募集中": 1,
