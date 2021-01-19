@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+
   def index
     @dogs = Dog.includes(:image).order('created_at DESC')
   end

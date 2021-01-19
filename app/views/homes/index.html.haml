@@ -1,43 +1,12 @@
-.main
-  .main__header
-    .main__header__left
-      .main__header__left__box
-        %h2.main__header__left__box__title
-          One Dog 
-        %h3.main__header__left__box__text
-          = link_to "里親募集Link", new_dog_path, class: "main__header__left__box__text__btn"
+.top
+  .top__image
+    = link_to image_tag("fd91d63fa421d122a857dcf597553e80.jpg", class: "top__image", alt: "イメージ画像")
 
-    .main__header__center
-      .main__header__center__box
-        .main__header__center__box__text
-          -# %P 里親募集
-
-    .main__header__right
-      .main__header__right__box
-        %ul.main__header__right__box__list
-          %li.main__header__right__box__list__link
-            %a.main__header__right__box__list__link__(href='#')
-              ログイン
-
-        %ul.main__header__right__box__list
-          %li.main__header__right__box__list__link
-            %a.main__header__right__box__list__link__(href='#')
-              新規登録
-
-        %ul.main__header__right__box__list
-          %li.main__header__right__box__list__link
-            %a.main__header__right__box__list__link__(href='#')
-              検索
-
-  .top
-    .top__image
-      = link_to image_tag("fd91d63fa421d122a857dcf597553e80.jpg", class: "top__image", alt: "イメージ画像")
-
-  .dogLists
-    最新の募集
-    - @dogs.each.with_index(1) do |dog, x|
-      - if x <= 5
-        .dogList
-          = link_to dog_path(dog) do
-            %figure.dogList--img
-              = image_tag "#{dog.images[0].src}"
+.dogLists
+  最新の募集
+  - @dogs.each.with_index(1) do |dog, x|
+    - if x <= 5
+      .dogList
+        = link_to dog_path(dog) do
+          %figure.dogList--img
+            = image_tag "#{dog.images[0].src}"
