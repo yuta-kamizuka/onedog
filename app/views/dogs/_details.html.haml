@@ -44,6 +44,16 @@
             %th 健康状態
             %td
               = @dog.condition.name
+  .basics__frame
+    .basics__frame__link
+      .basics__frame__link__box
+        -# - if user_signed_in? && current_user.id == @dog.seller_id
+        = link_to "削除する", dog_path(@dog.id), method: :delete,class:"#"
+        -# = link_to "編集する", edit_dog_path(@dog.id), method: :get,class:"#"
+      -# - elsif @dog.buyer_id.present?
+        -# = link_to "売り切れました","#",class:"#"
+      -# - else
+        -# = link_to "購入画面に進む",dog_buyers_path(@dog),class:"#"
 
     .comment__box
       %text_area
@@ -51,5 +61,3 @@
     .comment__box__note
       %p
         不快なコメントは退会処分になる事があります。
-
-    
