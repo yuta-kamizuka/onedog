@@ -1,0 +1,27 @@
+.main
+  %section.main__block
+    .header
+      .header__logo
+        -# =link_to image_tag('logo.png',class: "header__logo__image"), root_path
+  .purchase
+    .purchase__box
+      .purchase__heading
+        .purchase__heading__text
+          内容の確認
+      %hr
+      .purchase__dog
+        .purchase__dog__photo
+          = image_tag "#{@dog.images[0].src}", size: '64x64', class: 'buydetails-contet__image'
+        .purchase__dog__info
+          .name
+            = @dog.name
+
+        .purchase__dicision
+          %button.purchase__dicision__btn{type:"submit"} 里親になる
+          = link_to "里親になる",done_dogs_path,class:"purchase__dicision__btn"
+          = link_to "トップページへ戻る", root_path, class: "purchase__dicision__btn"
+
+        -# .purchase__shipping__name
+        -#   = @user.family_name
+        -#   = @user.first_name
+
