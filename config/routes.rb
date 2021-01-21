@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  resources :dogs, only: [:index, :new, :create, :show]
+  resources :dogs, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
 end
