@@ -48,12 +48,12 @@
     .basics__frame__link
       .basics__frame__link__box
         - if user_signed_in? && current_user.id == @dog.seller_id
-          = link_to "削除する", dog_path(@dog.id), method: :delete,class:"dd"
-          = link_to "編集する", edit_dog_path(@dog.id), method: :get,class:"#"
+          = link_to "削除する", dog_path(@dog.id), method: :delete,class:"aaa"
+          = link_to "編集する", edit_dog_path(@dog.id), method: :get,class:"aaa"
         - elsif @dog.buyer_id.present?
-          = link_to "里親見つかりました", root_path, class:"#"
+          = link_to "里親見つかりました", root_path, class:"aaa"
         - else
-          = link_to "引き取りページに進む",purchase_dogs_path(@dog),class:"#"
+          = link_to "引き取りページに進む",purchase_dogs_path(@dog),class:"aaa"
 
     .comment__box
       %text_area

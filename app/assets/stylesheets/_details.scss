@@ -112,3 +112,21 @@ table, td, th{
   width: 146px;
   height: 150px;
 }
+
+.basics__frame__link {
+  background-color: whitesmoke;
+  margin: auto;
+  &__box {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    .aaa {
+      background-color: paleturquoise;
+      padding: 5px;
+      width: auto;
+      border-style: 1px solid inset;
+      border-radius: 20px;
+    }
+  }
+
+}
