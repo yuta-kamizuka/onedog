@@ -1,113 +1,92 @@
 .container
-  .container__block
-
-    .container__header
-
-    -# 画像タイトル
-    = form_with model: @dog, local: true do |f|
-      .container__content
-        .a
-          .container__content__photo
-            %h3.phototitle__text
-              Dog photo
-            %p.phototitle__comment
-              最大4枚までアップロード
-              #image-Input__label
-                %i.fa.fa-camera
-                  カメラをクリックしてアップロード
-
-          -# 画像入る場所
-          .photobox
-            .outputBox
-              .image_box#preview
-                - if @dog.persisted?
-                  - @dog.images.each_with_index do |image, i|
-                    - if image.persisted?
-                      .new_image_wrapper#mini{data: {index: i}}
-                        = image_tag image.src.url,data: { index: i }, width: "200", height: '200'
-                        .js-remove
-                          削除する
-                %div#imageInput
-                  = f.fields_for :images do |image|
-                    = image.file_field :src, accept: "image/*", class: "js-file", data:{index: image.index}, style: 'display: none;'
-                    - if image.object.persisted?
-                      = image.check_box :_destroy, include_hidden: false, class: 'hidden-destroy'
-
-          -# .photobox#preview
-          -#   .image__box#image__input
-          -#     - if @dog.persisted?
-          -#       - @dog.images.each_with_index do |image, i|
-          -#         - if image.persisted?
-          -#           .new_image_wrapper#mini{data: {index: i}}
-          -#             = image_tag image.src.url,data: { index: i }, width: "100", height: '100'
-          -#             %button.js-remove
-          -#               削除する
-
-          -#     %div#imageInput
-          -#       -# %label#image-Input__label
-          -#       = f.fields_for :images do |i|
-          -#         = i.file_field :src, accept: "image/*", class: "js-file", date:{index: i.index}, style: 'display: none;'
-          -#         - if i.object.persisted?
-          -#           = i.check_box :_destroy, include_hidden: false, class: 'hidden-destroy'
-
-          .messages__dog
-            = @dog.errors.full_messages_for(:images)[0]
-      -# 説明
+  -# 画像タイトル
+  = form_with model: @dog, local: true do |f|
+    .container__content
       .a
-        .container__Content
-          .container__content__title
-            %h3.dog__text
-              紹介
-            = f.text_area :introduction, class: "introduction__form", maxlength: "1000", placeholder:"1000字まで"
-          .messages__dog
-            = @dog.errors.full_messages_for(:introduction)[0]
+        .container__content__photo
+          %h3.phototitle__text
+            Dog photo
+          %p.phototitle__comment
+            最大4枚までアップロード
+            #image-Input__label
+              %i.fa.fa-camera
+                カメラをクリックしてアップロード
 
-      -# 名前
-      .container__contents
-        .container__contents__title
+        -# 画像入る場所
+        .photobox
+          .outputBox
+            .image_box#preview
+              - if @dog.persisted?
+                - @dog.images.each_with_index do |image, i|
+                  - if image.persisted?
+                    .new_image_wrapper#mini{data: {index: i}}
+                      = image_tag image.src.url,data: { index: i }, width: "200", height: '200'
+                      .js-remove
+                        削除する
+              %div#imageInput
+                = f.fields_for :images do |image|
+                  = image.file_field :src, accept: "image/*", class: "js-file", data:{index: image.index}, style: 'display: none;'
+                  - if image.object.persisted?
+                    = image.check_box :_destroy, include_hidden: false, class: 'hidden-destroy'
+
+        .messages__dog
+          = @dog.errors.full_messages_for(:images)[0]
+    -# 説明
+    .a
+      .container__Content
+        .container__content__title
           %h3.dog__text
-            名前
-          = f.text_field :name, class: "dog__form", maxlength: "10", placeholder:"10字まで"
-          .messages__dog
-            = @dog.errors.full_messages_for(:name)[0]
+            紹介
+          = f.text_area :introduction, class: "introduction__form", maxlength: "1000", placeholder:"1000字まで"
+        .messages__dog
+          = @dog.errors.full_messages_for(:introduction)[0]
 
-      -# 犬種
-      .container__contents
-        .container__contents__title
-          %h3.dog__text
-            種類
-          = f.collection_select :dog_breed_id, DogBreed.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
-          .messages__dog
-            = @dog.errors.full_messages_for(:dog_breed_id)[0]
+    -# 名前
+    .container__contents
+      .container__contents__title
+        %h3.dog__text
+          名前
+        = f.text_field :name, class: "dog__form", maxlength: "10", placeholder:"10字まで"
+        .messages__dog
+          = @dog.errors.full_messages_for(:name)[0]
 
-      -# 年齢
-      .container__contents
-        .container__contents__title
-          %h3.dog__text
-            年齢
-          = f.collection_select :age_id, Age.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
-          .messages__dog
-            = @dog.errors.full_messages_for(:age_id)[0]
+    -# 犬種
+    .container__contents
+      .container__contents__title
+        %h3.dog__text
+          種類
+        = f.collection_select :dog_breed_id, DogBreed.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+        .messages__dog
+          = @dog.errors.full_messages_for(:dog_breed_id)[0]
 
-      -# 性別
-      .container__contents
-        .container__contents__title
-          %h3.dog__text
-            性別
-          = f.collection_select :sex_id, Sex.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
-          .messages__dog
-            = @dog.errors.full_messages_for(:sex_id)[0]
+    -# 年齢
+    .container__contents
+      .container__contents__title
+        %h3.dog__text
+          年齢
+        = f.collection_select :age_id, Age.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+        .messages__dog
+          = @dog.errors.full_messages_for(:age_id)[0]
 
-      -# 健康状態
-      .container__contents
-        .container__contents__title
-          %h3.dog__text
-            健康状態
-          = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
-          .messages__dog
-            = @dog.errors.full_messages_for(:condition_id)[0]
+    -# 性別
+    .container__contents
+      .container__contents__title
+        %h3.dog__text
+          性別
+        = f.collection_select :sex_id, Sex.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+        .messages__dog
+          = @dog.errors.full_messages_for(:sex_id)[0]
 
-      -# 登録ボタン
-      .container__content
-        .container__content__btn
-          = f.submit "登録", class: "dog__btn"
+    -# 健康状態
+    .container__contents
+      .container__contents__title
+        %h3.dog__text
+          健康状態
+        = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, {class: "dog__form"}
+        .messages__dog
+          = @dog.errors.full_messages_for(:condition_id)[0]
+
+    -# 登録ボタン
+    .container__content
+      .container__content__btn
+        = f.submit "登録", class: "dog__btn"

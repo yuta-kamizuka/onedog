@@ -7,7 +7,7 @@
 .main__header {
   width: 100vw;
   // margin: auto;
-  background-color:white;
+  background-color: black;
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid black;
@@ -27,7 +27,7 @@
         font-family: 'Courier New', Courier, monospace;
       }
       .ondog__title {
-        color: black;
+        color: white;
         text-decoration: none;
       }
       &__text {
@@ -35,7 +35,7 @@
         &__btn{
           text-decoration: none;
           font-size: 20px;
-          color: black;
+          color: white;
         }
       }
     }
@@ -168,3 +168,55 @@ a {
     text-align: left;
   }
 }
+
+
+
+.footer {
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  .contents {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    .content {
+      width: calc(100% / 3);
+      margin: 0 2% 0 0;
+      &__head {
+        margin: 0 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.purchaseBtn {
+  width: 120px;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  &__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  img {
+    width: 60%;
+  }
+}
+
