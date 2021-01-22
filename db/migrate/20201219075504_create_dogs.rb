@@ -8,6 +8,9 @@ class CreateDogs < ActiveRecord::Migration[6.0]
       t.integer :sex_id,            null: false
       t.integer :condition_id,      null: false
       t.integer :status,           null: false, default: 1
+      t.references :seller,        null: false
+      t.references :buyer,          default: ""
+
       t.timestamps
     end
   end

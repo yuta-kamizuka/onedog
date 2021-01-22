@@ -24,6 +24,10 @@
 |age|integer|null: false|
 |sex|string|null: false|
 |condition|string|null: false|
+|status|integer|null: false|
+|seller|references|null: false|
+|buyer|references|
+
 ### Association
 - has_many :image
 - belongs_to_active_hash :dog_breed

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_211044) do
+ActiveRecord::Schema.define(version: 2021_01_21_095948) do
 
   create_table "dogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -20,8 +20,12 @@ ActiveRecord::Schema.define(version: 2021_01_10_211044) do
     t.integer "sex_id", null: false
     t.integer "condition_id", null: false
     t.integer "status", default: 1, null: false
+    t.bigint "seller_id", null: false
+    t.bigint "buyer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_dogs_on_buyer_id"
+    t.index ["seller_id"], name: "index_dogs_on_seller_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -30,6 +34,12 @@ ActiveRecord::Schema.define(version: 2021_01_10_211044) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["dog_id"], name: "index_images_on_dog_id"
+  end
+
+  create_table "keeps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

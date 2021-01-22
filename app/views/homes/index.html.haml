@@ -10,3 +10,6 @@
         = link_to dog_path(dog) do
           %figure.dogList--img
             = image_tag "#{dog.images[0].src}"
+              -if dog.buyer_id.present? 
+              .itemsBoxPhotoSolid
+                .itemsBoxPhotoSolid__inner 

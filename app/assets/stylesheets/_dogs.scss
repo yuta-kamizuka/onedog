@@ -30,35 +30,40 @@
         &__comment {
         }
       }
-      .photobox {
-        // flex-direction: row;
-        display: flex;
-        position: relative;
-        // display: block;
-        // justify-content: center;
-        // align-items: flex-end;
-        margin: auto;
-        max-width: 800px;
-        height: 200px;
-        border: 1px dashed;
-        background-color: white;
-        overflow: auto;
-      }
-      .image__box {
+      // .photobox {
+        // // flex-direction: row;
         // display: flex;
-        position: absolute;
-        height: 200px;
-      }
+        // position: relative;
+        // // display: block;
+        // // justify-content: center;
+        // // align-items: flex-end;
+        // margin: auto;
+        // max-width: 800px;
+        // height: 200px;
+        // border: 1px dashed;
+        // background-color: white;
+        // overflow: auto;
+      // }
+      // .image__box {
+      //   // display: flex;
+      //   position: absolute;
+      //   height: 200px;
+      // }
       .messages__dog{
         color: red;
       }
       .js-remove {
-        width: 165px;
-        margin-top: auto;
-        margin-left: 1px;
+        // width: 180px;
+        font-size:12px;
+        color:#FFFFFF;
+        text-align:center;
+        display:block;
+        padding:5px 0 5px;
+        background:#6BCBF6;
+        border-radius: 20px;
+        border: solid 2px #ffffff;
+      } 
 
-
-      }
       .introduction__form {
         width: 80vw;
         max-width: 800px;
@@ -95,3 +100,42 @@
           font-size: 30px;
         }
     }
+
+
+
+
+
+  .photobox {
+    .outputBox {
+      display: flex;
+      position: relative;
+      margin: auto;
+      max-width: 800px;
+      height: 240px;
+      border: 1px dashed;
+      background-color: white;
+      overflow: auto;
+        img {
+          width: 200px;
+        }
+        .image_box {
+          display: flex;
+          // flex-wrap: wrap;
+          .image_box#box {
+            display: flex;
+            // flex-wrap: wrap;
+          }
+          #imageInput {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .js-remove {
+              display: flex;
+              float: left;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+
