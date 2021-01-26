@@ -80,7 +80,6 @@
   max-height: 800px;
   min-height: 100px;
 }
-
 .boxList {
   width: 100vw;
   font-size: 30px;
@@ -90,54 +89,48 @@
   margin-top: 30px;
 }
 
-.dogList {
-  width: 100vw;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .dogListBox {
   display: flex;
-  // justify-content: center;
   width: 100vw;
-  // height: auto;
-
-
-
   .dogLists {
-    max-width: 800px;
+    max-width: 100vw;
+    height: 200px;
     font-size: 20px;
     display: flex;
     margin-top: 20px;
-    // margin-left: auto;
-    // margin-right: auto;
-  }
-}
-a {
-  display: inline-block;
-  text-decoration: none;
-  .dogList--img {
-    width: 20vw;
-    height: 150px;
-    position: relative;
-    overflow: hidden;
-    margin: 0;
-    z-index: auto;
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      z-index: auto;
-      height: 150px;
-      object-fit: cover;
+    .dogList {
+      // width: 100vw;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        .dogList--img {
+          width: 20vw;
+          height: 200px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          z-index: auto;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+      }
     }
   }
 }
+
 
 .itemsBoxPhotoSolid{
   width: 0;
