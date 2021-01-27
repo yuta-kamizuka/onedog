@@ -1,15 +1,22 @@
 .top
   .top__image
     = link_to image_tag("fd91d63fa421d122a857dcf597553e80.jpg", class: "top__image", alt: "イメージ画像")
-
-.dogLists
+.boxList
   最新の募集
-  - @dogs.each.with_index(1) do |dog, x|
-    - if x <= 5
-      .dogList
-        = link_to dog_path(dog) do
-          %figure.dogList--img
-            = image_tag "#{dog.images[0].src}"
-              -if dog.buyer_id.present? 
-              .itemsBoxPhotoSolid
-                .itemsBoxPhotoSolid__inner 
+.dogListBox
+  .dogLists
+    - @dogs.each.with_index(1) do |dog, x|
+      - if x <= 5
+        .dogList
+          = link_to dog_path(dog) do
+            %figure.dogList--img
+              = image_tag "#{dog.images[0].src}"
+                -if dog.buyer_id.present? 
+                .itemsBoxPhotoSolid
+                  .itemsBoxPhotoSolid__inner Found
+            .dogList--body
+              %h3.name
+                = dog.name 
+
+
+

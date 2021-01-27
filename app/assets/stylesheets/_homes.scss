@@ -7,7 +7,7 @@
 .main__header {
   width: 100vw;
   // margin: auto;
-  background-color:white;
+  background-color: black;
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid black;
@@ -27,7 +27,7 @@
         font-family: 'Courier New', Courier, monospace;
       }
       .ondog__title {
-        color: black;
+        color: white;
         text-decoration: none;
       }
       &__text {
@@ -35,7 +35,7 @@
         &__btn{
           text-decoration: none;
           font-size: 20px;
-          color: black;
+          color: white;
         }
       }
     }
@@ -61,6 +61,8 @@
   }
 }
 
+
+
 // body
 .top {
   background-color:white;
@@ -78,45 +80,58 @@
   max-height: 800px;
   min-height: 100px;
 }
-
-.dogLists {
-  width: 600px;
-  font-size: 20px;
+.boxList {
+  width: 100vw;
+  font-size: 30px;
   display: flex;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.dogList {
-  display: inline-block;
-  width: 220px;
-  a {
-    background-color: #fff;
-    display: inline-block;
-    text-decoration: none;
-    .dogList--img {
-      width: 220px;
-      height: 150px;
-      position: relative;
-      overflow: hidden;
-      margin: 0;
-      z-index: auto;
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        z-index: auto;
-        height: 150px;
-        object-fit: cover;
+.dogListBox {
+  display: flex;
+  width: 100vw;
+  .dogLists {
+    max-width: 100vw;
+    height: 200px;
+    font-size: 20px;
+    display: flex;
+    margin-top: 20px;
+    .dogList {
+      // width: 100vw;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        .dogList--img {
+          width: 20vw;
+          height: 200px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          z-index: auto;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
       }
     }
   }
 }
+
+
 .itemsBoxPhotoSolid{
   width: 0;
   height: 0;
@@ -134,3 +149,67 @@
     font-weight: 600;
   }
 }
+
+.dogList--body {
+  background-color: seashell;
+  color: #333;
+  padding: 10px;
+  .name {
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+
+
+.footer {
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  .contents {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    .content {
+      width: calc(100% / 3);
+      margin: 0 2% 0 0;
+      &__head {
+        margin: 0 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.purchaseBtn {
+  width: 120px;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  &__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  img {
+    width: 60%;
+  }
+}
+

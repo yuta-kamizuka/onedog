@@ -52,8 +52,6 @@ class DogsController < ApplicationController
   end
 
   def done
-    # @dog_buyer.update( buyer_id: current_user.id)
-    # redirect_to done_dogs_path
   end
 
   private
