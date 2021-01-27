@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
-  def
-  end
-end
+# class UsersController < ApplicationController
+#   def index
+#   end
+# end
