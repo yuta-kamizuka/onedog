@@ -7,7 +7,7 @@ worker_processes 1
 # working_directory app_path
 
 # currentを指定
-working_directory "#{app_path}/current"
+# working_directory "#{app_path}/current"
 
 #Unicornの起動に必要なファイルの設置場所を指定
 # pid "#{app_path}/tmp/pids/unicorn.pid"
